@@ -4,8 +4,10 @@ namespace Framework\Http;
 
 use Psr\Http\Message\ResponseInterface;
 
-class ResponseSender {
-    public function send(ResponseInterface $response) : void {
+class ResponseSender
+{
+    public function send(ResponseInterface $response): void
+    {
         header(sprintf(
             'HTTP/%s %d %s',
             $response->getProtocolVersion(),
@@ -18,7 +20,7 @@ class ResponseSender {
                 header(sprintf('%s: %s', $name, $value), false);
             }
         }
-        
+
         echo $response->getBody()->getContents();
     }
 }
