@@ -3,9 +3,10 @@
 namespace Framework\Http\Router;
 
 use Framework\Http\Router\Result;
+use Framework\Http\Router\Route\Route;
 use Psr\Http\Message\ServerRequestInterface;
 
-class Route
+class RegexpRoute implements Route
 {
     public $name;
     public $pattern;
